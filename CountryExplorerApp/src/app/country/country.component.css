@@ -1,0 +1,10 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+.header {
+    text-align: center;
+}
+
+.search {
+    min-width: 400px;
+}

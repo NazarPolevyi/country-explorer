@@ -1,0 +1,38 @@
+<div class="main-div">
+    <mat-card class="card">
+        <div *ngIf="!loading; else loader">
+            <mat-card-actions>
+                <button (click)="onGoBack()" mat-button>Go back</button>
+              </mat-card-actions>
+            <mat-card-header>
+                <mat-card-title>
+                    <h1>{{country.name}}</h1>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <h3>Capital: {{country.capital}}</h3>
+                </mat-card-subtitle>
+                <img class="country-image" mat-card-sm-image src="{{country.image}}">
+            </mat-card-header>
+            <mat-card-content class="card-content">
+                <mat-divider></mat-divider>
+                <p>This country is located in: {{country.region}} region.</p>
+                <p>The main language is: {{country.language}}.</p>
+                <p>National currency is: {{country.currency}}.</p>
+            </mat-card-content>
+            <mat-card-footer>
+                Please follow the link to find the country on the map: <a href="{{country.mapLink}}">Google Map</a>
+            </mat-card-footer>
+        </div>
+        <ng-template #loader>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </ng-template>
+    </mat-card>
+</div>
+<!-- <iframe
+  width="450"
+  height="250"
+  frameborder="0" style="border:0"
+  referrerpolicy="no-referrer-when-downgrade"
+  [src]=googleMapsURLToEmbedURL()
+  allowfullscreen>
+</iframe> -->
